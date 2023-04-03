@@ -35,7 +35,6 @@ const App = () => {
       </TodoList>
 
       <CreateTodoButton/>
-      <button>+</button>
     </>
   )
 }

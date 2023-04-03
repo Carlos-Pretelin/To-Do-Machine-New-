@@ -1,11 +1,29 @@
 import React from 'react'
 
 const TodoItem = (props) => {
+
+
+  const onComplete = () => {
+    console.log(`Tu todo ${props.text} fue completado `)
+  }
+
+  const onDelete = () => {
+    console.log(`Tu todo ${props.text} fue eleminado `)
+  }
+
+
+
+
+
   return (
     <li>
-      <span>C</span>
+      <span
+      onClick={onComplete}
+      >C</span>
       <p>{props.text}</p>
-      <span>X</span>
+      <span
+      onClick={onDelete}
+      >X</span>
 
     </li>
   )
