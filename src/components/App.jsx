@@ -26,7 +26,7 @@ const App = () => {
       <TodoCounter/>
 
       <TodoSearch/> 
-      <input type="text" placeholder='Cebolla'/>
+      
 
       <TodoList>
         {todos.map ( todo => (
