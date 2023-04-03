@@ -30,7 +30,7 @@ const App = () => {
 
       <TodoList>
         {todos.map ( todo => (
-          <TodoItem todo={todo} key={todo.text}/>
+          <TodoItem todo={todo} key={todo.text} text={todo.text}/>
         ))}
       </TodoList>
 
