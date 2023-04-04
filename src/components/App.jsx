@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 //components
 import TodoCounter from "./TodoCounter"
@@ -11,11 +11,28 @@ import "../styles/App.scss"
 
 const App = () => {
 
-  const todos = [
+  //Default todo list just for development purposes
+  const defaultTodos = [
     {text: "Hola mundo", completed: false},
     {text: "Hola Amigo", completed: false},
-    {text: "Hola a Todos", completed: false}
+    {text: "Hola a Todos mis Amigos", completed: true}
   ]
+
+  
+  //State of the To-dos
+  const [todos, setTodos] = useState(defaultTodos)
+  //Value of the input 
+  const [searchValue, setSearchValue] = useState("");
+
+
+  //TODOCOUNTER PROPERTIES
+  //This filter is creating a new array with only the elements that have their completed element as true, 
+  //but i wrote .length so i get the number of items that are completed
+  const completedTodos = todos.filter( todo => todo.completed).length 
+  //Total number of todos
+  const totalTodos = todos.length;
+
+
 
 
 
@@ -23,9 +40,15 @@ const App = () => {
 
   return (
     <>
-      <TodoCounter/>
+      <TodoCounter
+      total={totalTodos}
+      completed={completedTodos}
+      />
 
-      <TodoSearch/> 
+      <TodoSearch
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      /> 
       
 
       <TodoList>

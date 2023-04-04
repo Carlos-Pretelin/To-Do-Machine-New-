@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 
-const TodoSearch = () => {
+const TodoSearch = ({searchValue, setSearchValue}) => {
 
-  const [searchValue, setSearchValue] = useState("");
 
   const onSearchValueChange = (e)=> {
     setSearchValue(e.target.value)
