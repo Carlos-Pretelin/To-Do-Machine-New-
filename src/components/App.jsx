@@ -31,8 +31,26 @@ const App = () => {
   const completedTodos = todos.filter( todo => todo.completed).length 
   //Total number of todos
   const totalTodos = todos.length;
+  //This is the array of todos where im going to store the todos that includes the value of whatever the user writes in the input, by dafault is empty
+  let searchedTodos = []
 
+  //So when i put the ! sign im telling the validation that if the statement is false you may proceed with the execution, if its true go to the else
+  //Basically reversing the deafult behavior, and if i put a second !, is going to cancel the second one, just like in math, 2 negatives makes a possitive
+  //In short if the searchValue is more than 0 that means the user wrote something so by dafualt the value is an empty array so this will be false but the validation wont go to the else block, cause i put a ! sing first
+  if(!searchValue >=1){
+    searchedTodos = todos;
+  } else {
+    //So here im making a filter that makes searchTodos a new array from todos
+    //Filtering the elements that are true
+    //Here i make both the text of the todo and the input to lower case, so i can compare them using .includes
+    //That way i can just make the new array of todos that includes the search that the user wrote
+    searchedTodos = todos.filter( todo => {
+      const todoText = todo.text.toLowerCase();
+      const searchText = searchValue.toLowerCase();
 
+      return todoText.includes(searchText)
+    })
+  }
 
 
 
@@ -52,7 +70,7 @@ const App = () => {
       
 
       <TodoList>
-        {todos.map ( todo => (
+        {searchedTodos.map ( todo => (
           <TodoItem todo={todo} key={todo.text} text={todo.text}/>
         ))}
       </TodoList>
@@ -62,4 +80,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
