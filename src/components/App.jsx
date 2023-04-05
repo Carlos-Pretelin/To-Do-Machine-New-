@@ -54,6 +54,33 @@ const App = () => {
 
 
 
+  //ok so in this function im changing the completed value to true,
+  //so first i need to fin the index or in other words the position of the todo or item i want to change so i can play with it 
+  const completeTodos = (text) => {
+
+    //todoIndex is the position of the todo
+    const todoIndex = todos.findIndex( todo => todo.text === text);
+    //newTodos is a new array that holds everything that "todos" has inside it 
+    const newTodos = [...todos];
+    //Here im changing the completed value of the element in the NewTodos array, in the position "todoIndex"
+    newTodos[todoIndex].completed = true;
+
+    //ALTERNATIVE WAY OF CHANGING THE VALUE
+
+    // newTodos[todoIndex] = {
+    //   text: newTodos[todoIndex].text,
+    //   completed: true
+    // }
+
+    //Here i just use the updater of the todos state to put the changed todo on screen
+    setTodos(newTodos)
+    
+    console.log(newTodos)
+    console.log("Se cambio el estado")
+  }
+
+
+
 
 
   return (
@@ -71,7 +98,12 @@ const App = () => {
 
       <TodoList>
         {searchedTodos.map ( todo => (
-          <TodoItem todo={todo} key={todo.text} text={todo.text}/>
+          <TodoItem 
+          todo={todo} 
+          key={todo.text} 
+          text={todo.text} 
+          onComplete={()=> completeTodos(todo.text)}
+          />
         ))}
       </TodoList>
 

@@ -3,9 +3,9 @@ import React from 'react'
 const TodoItem = (props) => {
 
 
-  const onComplete = () => {
-    console.log(`Tu todo ${props.text} fue completado `)
-  }
+  // const onComplete = () => {
+  //   console.log(`Tu todo ${props.text} fue completado `)
+  // }
 
   const onDelete = () => {
     console.log(`Tu todo ${props.text} fue eleminado `)
@@ -18,7 +18,7 @@ const TodoItem = (props) => {
   return (
     <li>
       <span
-      onClick={onComplete}
+      onClick={props.onComplete}
       >C</span>
       <p>{props.text}</p>
       <span
