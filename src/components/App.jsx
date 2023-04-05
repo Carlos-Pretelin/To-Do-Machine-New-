@@ -79,6 +79,18 @@ const App = () => {
     console.log("Se cambio el estado")
   }
 
+  //So this is the function to delete todos, is similar to the one for deleting todos
+  //here i get the index or position of the todo i want to delete and in the newtodos array i make a splice method stating that in the postion of my index
+  //i want to delete 1 element or in other words 1 position after the starting point of the first argument
+  const deleteTodos = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+    const newTodos = [...todos];
+
+    newTodos.splice(todoIndex, 1)
+    setTodos(newTodos)
+    console.log(newTodos)
+    console.log("Se cambio el estado, borre el todo")
+  }
 
 
 
@@ -103,6 +115,8 @@ const App = () => {
           key={todo.text} 
           text={todo.text} 
           onComplete={()=> completeTodos(todo.text)}
+          onDelete={()=> deleteTodos(todo.text)}
+          
           />
         ))}
       </TodoList>

@@ -22,7 +22,7 @@ const TodoItem = (props) => {
       >C</span>
       <p>{props.text}</p>
       <span
-      onClick={onDelete}
+      onClick={props.onDelete}
       >X</span>
 
     </li>
