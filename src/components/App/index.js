@@ -15,9 +15,37 @@ const App = () => {
     {text: "Hola a Todos mis Amigos", completed: true}
   ]
 
+
+
+
+  //LOCAL STORAGE
+
+  //This constant gets me whatever im storing in the local storage of the browser in this case im asking for the TODOS_V1 object
+  const localStorageTodos = localStorage.getItem(`TODOS_V1`);
+
+  let parsedTodos;
+
+  //So if localstorage has something in it that means parsedTodos will be equal to that parsed info
+  //But if its empty i will say that parsed todos is only an empty array and set the localStorage to a string with an array inside "[]" like this so that the user can create their first todo
+  if(!localStorageTodos){
+    localStorage.setItem("TODOS_V1", JSON.stringify([]))
+    parsedTodos = [];
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
+
+
+
+
+
+
+
+
+
   
   //State of the To-dos
-  const [todos, setTodos] = useState(defaultTodos)
+  const [todos, setTodos] = useState(parsedTodos)
   //Value of the input 
   const [searchValue, setSearchValue] = useState("");
 
@@ -51,6 +79,14 @@ const App = () => {
 
 
 
+  const saveTodos = (newTodos) => {
+    const stringifiedTodos = JSON.stringify(newTodos);
+    localStorage.setItem("TODOS_V1", stringifiedTodos),
+
+    setTodos(newTodos)
+  }
+
+
   //ok so in this function im changing the completed value to true,
   //so first i need to fin the index or in other words the position of the todo or item i want to change so i can play with it 
   const completeTodos = (text) => {
@@ -70,8 +106,11 @@ const App = () => {
     // }
 
     //Here i just use the updater of the todos state to put the changed todo on screen
-    setTodos(newTodos)
-    
+
+    //setTodos(newTodos)
+    //Here i replaced the setTodos with a new function, saveTodos, so i can persist information in localStorage, it does the same thing, it just updates
+    //the todos that are deleted and completed, but also stringifies them so i can send them to the localStorage
+    saveTodos(newTodos)
     console.log(newTodos)
     console.log("Se cambio el estado")
   }
@@ -84,7 +123,11 @@ const App = () => {
     const newTodos = [...todos];
 
     newTodos.splice(todoIndex, 1)
-    setTodos(newTodos)
+    
+    //setTodos(newTodos)
+    //Here i replaced the setTodos with a new function, saveTodos, so i can persist information in localStorage, it does the same thing, it just updates
+    //the todos that are deleted and completed, but also stringifies them so i can send them to the localStorage
+    saveTodos(newTodos)
     console.log(newTodos)
     console.log("Se cambio el estado, borre el todo")
   }
