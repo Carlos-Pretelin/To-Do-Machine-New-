@@ -1,13 +1,10 @@
 import React, {useState} from 'react'
 
 //components
-import TodoCounter from "./TodoCounter"
-import TodoSearch from "./TodoSearch"
-import TodoList from "./TodoList"
-import TodoItem from "./TodoItem"
-import CreateTodoButton from "./CreateTodoButton"
+import AppUI from './AppUI'
 //scss
-import "../styles/App.scss"
+import "./App.scss"
+
 
 const App = () => {
 
@@ -96,33 +93,15 @@ const App = () => {
 
 
   return (
-    <>
-      <TodoCounter
-      total={totalTodos}
-      completed={completedTodos}
-      />
-
-      <TodoSearch
-      searchValue={searchValue}
-      setSearchValue={setSearchValue}
-      /> 
-      
-
-      <TodoList>
-        {searchedTodos.map ( todo => (
-          <TodoItem 
-          todo={todo} 
-          key={todo.text} 
-          text={todo.text} 
-          onComplete={()=> completeTodos(todo.text)}
-          onDelete={()=> deleteTodos(todo.text)}
-          
-          />
-        ))}
-      </TodoList>
-
-      <CreateTodoButton/>
-    </>
+    <AppUI
+    totalTodos={totalTodos}
+    completedTodos={completedTodos}
+    searchValue={searchValue}
+    setSearchValue={setSearchValue}
+    searchedTodos={searchedTodos}
+    completeTodos={completeTodos}
+    deleteTodos={deleteTodos}
+    />
   )
 }
 
