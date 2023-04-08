@@ -19,20 +19,12 @@ const App = () => {
   ]
 
 
-
-
-
-
-
-
-
-
   
   //State of the To-dos
   //Here i getting the todos from my custom hook so i know if i have todos in the local storage, by default theres nothing so i send an initalValue as an []
   //Then im getting the saveItem function that updates my todo list, its the updater i use in the onComplete and onDelete buttons, so that way i can store
   //the changes to the localStorage
-  const [todos, saveItem] = useLocalStorage("TODOS_V1", []);
+  const {Item: todos, saveItem, loading, error} = useLocalStorage("TODOS_V1", []);
   //Value of the input 
   const [searchValue, setSearchValue] = useState("");
 
@@ -126,6 +118,8 @@ const App = () => {
     searchedTodos={searchedTodos}
     completeTodos={completeTodos}
     deleteTodos={deleteTodos}
+    loading={loading}
+    error={error}
     />
   )
 }
