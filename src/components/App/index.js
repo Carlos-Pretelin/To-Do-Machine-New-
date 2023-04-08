@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import useLocalStorage from '../../hooks/useLocalStorage'
 
 //components
 import AppUI from './AppUI'
@@ -12,27 +13,10 @@ const App = () => {
   const defaultTodos = [
     {text: "Hola mundo", completed: false},
     {text: "Hola Amigo", completed: false},
-    {text: "Hola a Todos mis Amigos", completed: true}
+    {text: "Hola como, como estas shawty", completed: false},
+    {text: "Yo sup man", completed: false},
+    {text: "Este To-do es True", completed: true}
   ]
-
-
-
-
-  //LOCAL STORAGE
-
-  //This constant gets me whatever im storing in the local storage of the browser in this case im asking for the TODOS_V1 object
-  const localStorageTodos = localStorage.getItem(`TODOS_V1`);
-
-  let parsedTodos;
-
-  //So if localstorage has something in it that means parsedTodos will be equal to that parsed info
-  //But if its empty i will say that parsed todos is only an empty array and set the localStorage to a string with an array inside "[]" like this so that the user can create their first todo
-  if(!localStorageTodos){
-    localStorage.setItem("TODOS_V1", JSON.stringify([]))
-    parsedTodos = [];
-  } else {
-    parsedTodos = JSON.parse(localStorageTodos);
-  }
 
 
 
@@ -45,7 +29,10 @@ const App = () => {
 
   
   //State of the To-dos
-  const [todos, setTodos] = useState(parsedTodos)
+  //Here i getting the todos from my custom hook so i know if i have todos in the local storage, by default theres nothing so i send an initalValue as an []
+  //Then im getting the saveItem function that updates my todo list, its the updater i use in the onComplete and onDelete buttons, so that way i can store
+  //the changes to the localStorage
+  const [todos, saveItem] = useLocalStorage("TODOS_V1", []);
   //Value of the input 
   const [searchValue, setSearchValue] = useState("");
 
@@ -79,12 +66,7 @@ const App = () => {
 
 
 
-  const saveTodos = (newTodos) => {
-    const stringifiedTodos = JSON.stringify(newTodos);
-    localStorage.setItem("TODOS_V1", stringifiedTodos),
-
-    setTodos(newTodos)
-  }
+  
 
 
   //ok so in this function im changing the completed value to true,
@@ -110,7 +92,7 @@ const App = () => {
     //setTodos(newTodos)
     //Here i replaced the setTodos with a new function, saveTodos, so i can persist information in localStorage, it does the same thing, it just updates
     //the todos that are deleted and completed, but also stringifies them so i can send them to the localStorage
-    saveTodos(newTodos)
+    saveItem(newTodos)
     console.log(newTodos)
     console.log("Se cambio el estado")
   }
@@ -125,9 +107,9 @@ const App = () => {
     newTodos.splice(todoIndex, 1)
     
     //setTodos(newTodos)
-    //Here i replaced the setTodos with a new function, saveTodos, so i can persist information in localStorage, it does the same thing, it just updates
+    //Here i replaced the setTodos with a new function, saveItem, so i can persist information in localStorage, it does the same thing, it just updates
     //the todos that are deleted and completed, but also stringifies them so i can send them to the localStorage
-    saveTodos(newTodos)
+    saveItem(newTodos)
     console.log(newTodos)
     console.log("Se cambio el estado, borre el todo")
   }
