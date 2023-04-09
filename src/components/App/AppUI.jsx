@@ -9,6 +9,7 @@ import TodoList from "../TodoList"
 import TodoItem from "../TodoItem"
 import CreateTodoButton from "../CreateTodoButton"
 import Modal from '../Modal/Modal'
+import TodoForm from '../TodoForm'
 
 
 
@@ -63,7 +64,7 @@ const AppUI = () => {
 
       {modal && (
         <Modal>
-            <p>culo</p>
+            <TodoForm setModal={setModal} />
         </Modal>
       )}
 

@@ -103,6 +103,19 @@ import useLocalStorage from "../hooks/useLocalStorage";
   }
 
 
+  const addTodos = (text) => {
+    const newTodos = [...todos];
+
+    newTodos.push({
+      text: text,
+      completed: false
+    })
+    saveItem(newTodos)
+    console.log("Se añadio el todo")
+    console.log(newTodos)
+
+  }
+
     return (
         <TodoContext.Provider value={
     {totalTodos,
@@ -115,7 +128,8 @@ import useLocalStorage from "../hooks/useLocalStorage";
     loading,
     error,
     modal,
-    setModal
+    setModal,
+    addTodos
         }}>
             {props.children}
         </TodoContext.Provider>
