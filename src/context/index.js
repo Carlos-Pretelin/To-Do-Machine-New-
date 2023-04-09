@@ -22,6 +22,8 @@ import useLocalStorage from "../hooks/useLocalStorage";
   //Value of the input 
   const [searchValue, setSearchValue] = useState("");
 
+  const [modal, setModal] = useState(false);
+
 
   //TODOCOUNTER PROPERTIES
   //This filter is creating a new array with only the elements that have their completed element as true, 
@@ -112,6 +114,8 @@ import useLocalStorage from "../hooks/useLocalStorage";
     deleteTodos,
     loading,
     error,
+    modal,
+    setModal
         }}>
             {props.children}
         </TodoContext.Provider>

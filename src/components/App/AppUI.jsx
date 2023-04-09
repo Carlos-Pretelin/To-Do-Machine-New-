@@ -23,7 +23,9 @@ const AppUI = () => {
         deleteTodos,
         searchedTodos,
         error,
-        loading
+        loading,
+        modal,
+        setModal
         } = useContext(TodoContext);
 
   return (
@@ -59,11 +61,16 @@ const AppUI = () => {
         ))}
       </TodoList>
 
-      <Modal>
-        <p>culo</p>
-      </Modal>
+      {modal && (
+        <Modal>
+            <p>culo</p>
+        </Modal>
+      )}
 
-      <CreateTodoButton/>
+      <CreateTodoButton
+      modal={modal}
+      setModal={setModal}
+      />
     </>
   )
 }
