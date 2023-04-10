@@ -8,6 +8,9 @@ import TodoItem from "../TodoItem/TodoItem"
 import CreateTodoButton from "../CreateTodoButton/CreateTodoButton"
 import Modal from '../Modal/Modal'
 import TodoForm from '../TodoForm/TodoForm'
+
+import Footer from '../containers/Footer/Footer'
+
 //scss
 import "./AppUI.scss"
 
@@ -65,6 +68,9 @@ const AppUI = () => {
       modal={modal}
       setModal={setModal}
       />
+
+
+      <Footer/>
     </div>
   )
 }
