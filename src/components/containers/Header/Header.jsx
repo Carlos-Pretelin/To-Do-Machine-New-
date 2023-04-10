@@ -6,7 +6,7 @@ import "./Header.scss"
 
 const Header = () => {
   return (
-    <header>
+    <header className='center'>
         <h1>To-Go </h1>
         <TodoCounter/>
         <TodoSearch/>
