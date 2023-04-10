@@ -3,13 +3,13 @@ import React, { useContext } from 'react'
 import { TodoContext } from '../../context'
 
 //Components
-import TodoCounter from "../TodoCounter"
-import TodoSearch from "../TodoSearch"
-import TodoList from "../TodoList"
-import TodoItem from "../TodoItem"
-import CreateTodoButton from "../CreateTodoButton"
+import TodoCounter from "../TodoCounter/TodoCounter"
+import TodoSearch from "../TodoSearch/TodoSearch"
+import TodoList from "../TodoList/TodoList"
+import TodoItem from "../TodoItem/TodoItem"
+import CreateTodoButton from "../CreateTodoButton/CreateTodoButton"
 import Modal from '../Modal/Modal'
-import TodoForm from '../TodoForm'
+import TodoForm from '../TodoForm/TodoForm'
 
 
 

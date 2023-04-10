@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { TodoContext } from '../context'
+import { TodoContext } from '../../context'
 
 // const TodoCounter = ({total, completed}) => {
 // alternative way to calling props   
