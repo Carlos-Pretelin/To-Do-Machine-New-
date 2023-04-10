@@ -1,14 +1,22 @@
 
 
-li{
-    display: flex;
-    width: 100%;
-}
+// li{
+//     display: flex;
+    
+//     width: 100%;
+// }
 .Todo-Item{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
     margin: 1rem 0;
 }
-.Todo-Info{
-    display: flex;
-    flex-direction: column;
-    margin-left: 1rem;
+
+.Todo{
+    grid-column: 2 / 3;
+}
+
+.IconBox{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
 }

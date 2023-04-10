@@ -22,7 +22,7 @@ const TodoItem = (props) => {
 
 
       {/* 2 SECCION DEL TODO Y LA INFO */}
-      <div className='Todo-Info'>
+      
 
 
         <div className='Todo'>
@@ -59,7 +59,7 @@ const TodoItem = (props) => {
         
         
 
-      </div>
+      
 
     </li>
   )
