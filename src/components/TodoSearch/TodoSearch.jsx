@@ -1,6 +1,8 @@
 import React, {useContext, useState} from 'react'
 import { TodoContext } from '../../context'
 
+import "./TodoSearch.scss"
+
 const TodoSearch = () => {
 
 
@@ -13,14 +15,14 @@ const TodoSearch = () => {
 
 
   return (
-    <div>
+    <div className='TodoSearch'>
       
       <input 
       type="text" 
-      placeholder='Cebolla'
+      placeholder='Search for your To-do...'
       onChange={onSearchValueChange}
       />  
-      <h3>El estado es {searchValue}</h3>
+      {/* <h3>El estado es {searchValue}</h3> */}
     </div>
   )
 }

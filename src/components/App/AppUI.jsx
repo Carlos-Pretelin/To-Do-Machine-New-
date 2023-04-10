@@ -1,15 +1,15 @@
 import React, { useContext } from 'react'
-
+//Context
 import { TodoContext } from '../../context'
-
 //Components
-import TodoCounter from "../TodoCounter/TodoCounter"
-import TodoSearch from "../TodoSearch/TodoSearch"
+import Header from '../containers/Header/Header'
 import TodoList from "../TodoList/TodoList"
 import TodoItem from "../TodoItem/TodoItem"
 import CreateTodoButton from "../CreateTodoButton/CreateTodoButton"
 import Modal from '../Modal/Modal'
 import TodoForm from '../TodoForm/TodoForm'
+//scss
+import "./AppUI.scss"
 
 
 
@@ -30,17 +30,10 @@ const AppUI = () => {
         } = useContext(TodoContext);
 
   return (
-    <>
-      <TodoCounter
-    // This props are going to be called directly from their componetns using the context file  
-    //   total={totalTodos}
-    //   completed={completedTodos}
-      />
+    <div className='Wrapper'>
 
-      <TodoSearch
-    //   searchValue={searchValue}
-    //   setSearchValue={setSearchValue}
-      /> 
+
+      <Header/>
       
 
       <TodoList>
@@ -72,7 +65,7 @@ const AppUI = () => {
       modal={modal}
       setModal={setModal}
       />
-    </>
+    </div>
   )
 }
 
