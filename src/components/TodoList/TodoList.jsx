@@ -1,8 +1,10 @@
 import React from 'react'
 
+import "./TodoList.scss"
+
 const TodoList = ({children}) => {
   return (
-    <section>
+    <section className='TodoList'>
       <ul>
         {children}
       </ul>

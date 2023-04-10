@@ -11,7 +11,10 @@ const TodoCounter = () => {
   const {totalTodos, completedTodos} = useContext(TodoContext)
   
   return (
-    <h2>Has completado {completedTodos} de {totalTodos} To-dos</h2>
+    <div className='TodoCounter'>
+        <h3>Has completado {completedTodos} de {totalTodos} To-dos</h3>
+    </div>
+    
   )
 }
 
