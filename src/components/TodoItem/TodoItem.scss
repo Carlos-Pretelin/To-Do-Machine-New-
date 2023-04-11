@@ -50,7 +50,7 @@
     padding-top: .5rem;
 }
 
-.IconBox button {
+button {
     padding: .3rem;
     border-radius: .8rem;
     margin-left: .5rem;
@@ -64,9 +64,7 @@
     background-color: var(--categoryPurple);
     
 }
-.Category-Button p{
-    
-}
-.Delete-Button{
+
+.Red-Button{
     background-color: var(--lightRed);
 }

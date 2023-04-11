@@ -1,6 +1,8 @@
 import React, {useContext, useState} from 'react'
 import { TodoContext } from '../../context'
 
+import "./TodoForm.scss"
+
 const TodoForm = ({setModal}) => {
 
 
@@ -33,18 +35,18 @@ const TodoForm = ({setModal}) => {
         
     // }
   return (
-    <form onSubmit={onSubmit}>
-        <label>Escribe tu nuevo To-Do</label>
+    <form className='TodoForm' onSubmit={onSubmit}>
+        {/* <label>Escribe tu nuevo To-Do</label> */}
         <textarea  
-        placeholder='Cortar Cebolla'
+        placeholder='Escribe tu nuevo todo!'
         onChange={onModalValueChange} 
         cols="10" 
         rows="5"
         ></textarea>
 
-        <div>
-            <button type='button' onClick={onCancel}>Cancelar</button>
-            <button type='submit' >Añadir</button>
+        <div className='TodoForm-ButtonBox'>
+            <button className='Red-Button' type='button' onClick={onCancel}>Cancelar</button>
+            <button className='Red-Button' type='submit' >Añadir</button>
         </div>
     </form>
   )

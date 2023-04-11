@@ -57,7 +57,7 @@ const TodoItem = (props) => {
             {/* BORRAR ICON */}
             <button
             onClick={props.onDelete}
-            className='Delete-Button'
+            className='Delete-Button Red-Button'
             >
               <i className="fa-solid fa-trash"></i>
               <p>Borrar</p>
