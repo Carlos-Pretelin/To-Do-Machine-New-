@@ -2,7 +2,7 @@ import React from 'react'
 //Components
 import Header from '../containers/Header/Header'
 import Main from '../containers/Main/Main'
-import Footer from '../containers/Footer/Footer'
+//import Footer from '../containers/Footer/Footer'
 
 //scss
 import "./AppUI.scss"
@@ -25,7 +25,7 @@ const AppUI = () => {
       
       <Main/>
 
-      <Footer/>
+
 
       
     </div>

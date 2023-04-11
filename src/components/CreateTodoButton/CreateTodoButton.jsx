@@ -1,5 +1,6 @@
 import React from 'react'
 
+import "./CreateTodoButton.scss"
 const CreateTodoButton = ({modal, setModal}) => {
 
   const onClickButton = () => {

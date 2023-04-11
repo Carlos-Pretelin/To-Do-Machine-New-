@@ -30,15 +30,21 @@ const TodoItem = (props) => {
           <p>{props.text}</p>
           
         </div>
-        
 
+
+        {/* Box with the Date and the future Categories box */}
+        <div className='Todo-info'>
+          
+         <div className='DateBox'>
+          {/* FECHA */}
+          <span>
+              <p>12:30 4/10/23</p>
+          </span>
+         </div>
         
         
         <div className='IconBox'>
-            {/* FECHA */}
-            <span>
-              <p>12:30 4/10/23</p>
-            </span>
+           
             
             {/* CATEGORIES ICON */}
             <button className='Category-Button'>
@@ -59,6 +65,7 @@ const TodoItem = (props) => {
             </button>   
         </div>
 
+        </div>
         
 
         
