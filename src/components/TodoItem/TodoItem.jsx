@@ -17,7 +17,7 @@ const TodoItem = (props) => {
       onClick={props.onComplete}
       className='Checkmark'
       >
-        <i class="fa-solid fa-check fa-xl"></i>
+        <i className="fa-solid fa-check fa-xl"></i>
       </span>
 
 
@@ -42,7 +42,9 @@ const TodoItem = (props) => {
             
             {/* CATEGORIES ICON */}
             <button className='Category-Button'>
-              <i class="fa-solid fa-house"> Home</i>
+              <i className="fa-solid fa-house"></i>
+              <p>Home</p>
+              {}
 
             </button>
 
@@ -51,7 +53,8 @@ const TodoItem = (props) => {
             onClick={props.onDelete}
             className='Delete-Button'
             >
-              <i class="fa-solid fa-trash"> Borrar</i>
+              <i className="fa-solid fa-trash"></i>
+              <p>Borrar</p>
 
             </button>   
         </div>

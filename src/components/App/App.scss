@@ -1,5 +1,6 @@
 :root{
-    --white: #FFFFFF;
+    --white: rgba(255, 255, 255, 0.87);
+
 	--black: #1D1D1D;
     --grey: #363636;
     --lightRed: #FF8080;
@@ -15,7 +16,7 @@ html{
 }
 body{
     background-color: var(--black);
-    color: white;
+    color: var(--white);
 
 }
 
