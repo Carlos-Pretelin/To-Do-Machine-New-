@@ -1,3 +1,10 @@
+:root{
+    --white: #FFFFFF;
+	--black: #1D1D1D;
+    --grey: #363636;
+    --lightRed: #FF8080;
+    --categoryPurple: #8687E7;
+}
 *{
     box-sizing: border-box;
     margin: 0;	
@@ -7,7 +14,8 @@ html{
     font-size: 62.5%;
 }
 body{
-    background-color: #1D1D1D;
+    background-color: var(--black);
     color: white;
 
 }
+
