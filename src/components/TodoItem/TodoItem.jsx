@@ -15,6 +15,7 @@ const TodoItem = (props) => {
       {/* CHECKMARK DE COMPLETAR */}
       <span
       onClick={props.onComplete}
+      className='Checkmark'
       >
         <i className="fa-solid fa-check"></i>
 
@@ -37,7 +38,7 @@ const TodoItem = (props) => {
         <div className='IconBox'>
             {/* FECHA */}
             <span>
-              <p>Date</p>
+              <p>12:30 4/10/23</p>
             </span>
             
             {/* CATEGORIES ICON */}
